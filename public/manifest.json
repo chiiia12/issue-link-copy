@@ -5,9 +5,10 @@
   "permissions": [
     "activeTab",
     "declarativeContent",
-    "storage"
+    "storage",
+    "tabs"
   ],
-  "page_action": {
+  "browser_action": {
     "default_popup": "./index.html",
     "default_title": "Issue link search"
   },
