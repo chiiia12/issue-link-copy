@@ -8,6 +8,7 @@ import {addTodo} from './actions';
 
 let store = createStore(todo)
 store.dispatch(addTodo('Hello world'))
+store.dispatch(addTodo('Hello React'))
 console.log(store.getState())
 
 render(

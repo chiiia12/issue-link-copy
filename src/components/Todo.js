@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types';
 const Todo = ({ text }) => (
     <li>
-        text
+        {text}
     </li>
 )
 
