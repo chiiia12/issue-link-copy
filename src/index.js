@@ -1,3 +1,4 @@
+/*global chrome*/
 import React from 'react';
 import App from './components/App';
 import {render} from 'react-dom';
@@ -9,6 +10,13 @@ import {addTodo} from './actions';
 let store = createStore(todo)
 store.dispatch(addTodo('Hello world'))
 store.dispatch(addTodo('Hello React'))
+chrome.history.search({
+'text':''
+},function(historyItems){
+    for(var i = 0;i<historyItems.length;i++){
+        console.log(historyItems[i])
+    }
+})
 console.log(store.getState())
 
 render(
