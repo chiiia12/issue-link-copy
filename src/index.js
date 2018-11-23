@@ -15,6 +15,7 @@ chrome.history.search({
 },function(historyItems){
     for(var i = 0;i<historyItems.length;i++){
         console.log(historyItems[i])
+        store.dispatch(addTodo(historyItems[i].title))
     }
 })
 console.log(store.getState())
