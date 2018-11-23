@@ -6,3 +6,11 @@ export const addTodo = (text) => {
         text
     }
 }
+export const addHistory = (text,url)=>{
+    return {
+        type: 'ADD_HISTORY',
+        id: nextTodoId++,
+        text,
+        url
+    }
+}
