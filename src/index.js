@@ -1,27 +1,25 @@
 /*global chrome*/
 import React from 'react';
 import App from './components/App';
-import {render} from 'react-dom';
+import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import {createStore} from 'redux';
-import history from './reducers';
-import {addHistory} from './actions';
+import { createStore } from 'redux';
+import historys from './reducers';
+import { addHistory } from './actions';
 
 //initialize 
-let store = createStore(history)
+let store = createStore(historys)
 chrome.history.search({
-'text':''
-},function(historyItems){
-    for(var i = 0;i<historyItems.length;i++){
-        console.log(historyItems[i])
-        store.dispatch(addHistory(historyItems[i].title),historyItems[i].url)
+    'text': ''
+}, function (historyItems) {
+    for (var i = 0; i < historyItems.length; i++) {
+        store.dispatch(addHistory(historyItems[i].title, historyItems[i].url))
     }
 })
-console.log(store.getState())
 
 render(
     <Provider store={store}>
-      <App />
+        <App />
     </Provider>,
     document.getElementById('root')
-  )
+)

@@ -1,5 +1,5 @@
 let nextTodoId = 0
-export const addHistory = (text,url)=>{
+export const addHistory = (text, url) => {
     return {
         type: 'ADD_HISTORY',
         id: nextTodoId++,
