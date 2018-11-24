@@ -1,11 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import InboxIcon from '@material-ui/icons/Inbox';
+
 const History = ({ text, url }) => (
-    <li>
-        <a href={url}>
+    <ListItem button>
+        <ListItemIcon>
+            <InboxIcon />
+        </ListItemIcon>
+        <ListItemText primary={text} />
+        {/* <a href={url}>
             {text}
-        </a>
-    </li>
+        </a> */}
+    </ListItem>
 )
 
 History.PropTypes = {

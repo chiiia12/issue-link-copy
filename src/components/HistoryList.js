@@ -1,15 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import History from './History'
+import List from '@material-ui/core/List';
 
 const HistoryList= ({historys})=>(
-    <ul>
+    <List>
         {historys.map((history)=>
        <History
        key={history.id}
        {...history}/> 
         )}
-    </ul>
+    </List>
 )
 HistoryList.propTypes={
     historys:PropTypes.arrayOf(PropTypes.shape({
