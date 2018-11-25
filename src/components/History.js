@@ -11,9 +11,6 @@ const History = ({ text, url }) => (
             <InboxIcon />
         </ListItemIcon>
         <ListItemText primary={text} />
-        {/* <a href={url}>
-            {text}
-        </a> */}
     </ListItem>
 )
 

@@ -12,8 +12,13 @@ let store = createStore(historys)
 chrome.history.search({
     'text': ''
 }, function (historyItems) {
+    console.log(historyItems)
     for (var i = 0; i < historyItems.length; i++) {
-        store.dispatch(addHistory(historyItems[i].title, historyItems[i].url))
+        let isMatch = historyItems[i].url.match(/.*(github.com).+(issues).+/)
+        console.log("isMatch is " + isMatch)
+        if (isMatch!=null) {
+            store.dispatch(addHistory(historyItems[i].title, historyItems[i].url))
+        }
     }
 })
 
