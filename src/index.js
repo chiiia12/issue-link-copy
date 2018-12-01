@@ -10,15 +10,13 @@ import { addHistory } from './actions';
 //initialize 
 let store = createStore(historys)
 chrome.history.search({
-    'text': ''
+    'text': "/.*(github.com).+(issues/issues/).+/",
+    maxResults: 1000
 }, function (historyItems) {
     console.log(historyItems)
+    console.log("historyItems.length" + historyItems.length)
     for (var i = 0; i < historyItems.length; i++) {
-        let isMatch = historyItems[i].url.match(/.*(github.com).+(issues).+/)
-        console.log("isMatch is " + isMatch)
-        if (isMatch!=null) {
-            store.dispatch(addHistory(historyItems[i].title, historyItems[i].url))
-        }
+        store.dispatch(addHistory(historyItems[i].title, historyItems[i].url))
     }
 })
 
