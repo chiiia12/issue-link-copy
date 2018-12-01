@@ -1,16 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/Inbox';
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
+import DeleteIcon from '@material-ui/icons/Delete';
+import IconButton from '@material-ui/core/IconButton';
 
 const History = ({ text, url }) => (
     <ListItem button>
-        <ListItemIcon>
-            <InboxIcon />
-        </ListItemIcon>
         <ListItemText primary={text} />
+        <ListItemSecondaryAction>
+            <IconButton aria-label="Delete">
+                <DeleteIcon />
+            </IconButton>
+        </ListItemSecondaryAction>
     </ListItem>
 )
 
