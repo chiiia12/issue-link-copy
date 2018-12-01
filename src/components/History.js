@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-import DeleteIcon from '@material-ui/icons/Delete';
+import FileCopyIcon from '@material-ui/icons/FileCopy';
 import IconButton from '@material-ui/core/IconButton';
 
 const History = ({ text, url }) => (
@@ -11,7 +11,7 @@ const History = ({ text, url }) => (
         <ListItemText primary={text} />
         <ListItemSecondaryAction>
             <IconButton aria-label="Delete">
-                <DeleteIcon />
+            <FileCopyIcon/>
             </IconButton>
         </ListItemSecondaryAction>
     </ListItem>
