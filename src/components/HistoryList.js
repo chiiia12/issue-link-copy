@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import History from './History'
 import List from '@material-ui/core/List';
+import { Divider } from '@material-ui/core';
 
 const HistoryList = ({ historys }) => {
     if (historys.size === 0) {
@@ -12,9 +13,12 @@ const HistoryList = ({ historys }) => {
         return (
             <List>
                 {historys.map((history) =>
-                    <History
-                        key={history.id}
-                        {...history} />
+                    <div>
+                        <History
+                            key={history.id}
+                            {...history} />
+                        <Divider />
+                    </div>
                 )}
             </List>
         )

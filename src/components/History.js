@@ -6,20 +6,22 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
 import IconButton from '@material-ui/core/IconButton';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import Divider from '@material-ui/core/Divider';
 
-const History = ({ text, url }) => (
-    <ListItem button>
-        <ListItemText primary={text} />
-        <ListItemSecondaryAction>
-            <CopyToClipboard onCopy={()=>{}} text={url}>
-                <IconButton aria-label="Delete">
-                    <FileCopyIcon />
-                </IconButton>
-            </CopyToClipboard>
-        </ListItemSecondaryAction>
-    </ListItem>
-)
-
+const History = ({ text, url }) => {
+    return (
+        <ListItem>
+            <ListItemText primary={text} />
+            <ListItemSecondaryAction>
+                <CopyToClipboard onCopy={() => { }} text={url}>
+                    <IconButton aria-label="Delete">
+                        <FileCopyIcon />
+                    </IconButton>
+                </CopyToClipboard>
+            </ListItemSecondaryAction>
+        </ListItem>
+    )
+}
 History.PropTypes = {
     text: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired
