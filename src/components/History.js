@@ -5,14 +5,17 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
 import IconButton from '@material-ui/core/IconButton';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const History = ({ text, url }) => (
     <ListItem button>
         <ListItemText primary={text} />
         <ListItemSecondaryAction>
-            <IconButton aria-label="Delete">
-            <FileCopyIcon/>
-            </IconButton>
+            <CopyToClipboard onCopy={()=>{}} text={url}>
+                <IconButton aria-label="Delete">
+                    <FileCopyIcon />
+                </IconButton>
+            </CopyToClipboard>
         </ListItemSecondaryAction>
     </ListItem>
 )

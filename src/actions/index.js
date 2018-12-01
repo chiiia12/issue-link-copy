@@ -7,3 +7,6 @@ export const addHistory = (text, url) => {
         url
     }
 }
+export const copyUrl = (url)=>{
+
+}
