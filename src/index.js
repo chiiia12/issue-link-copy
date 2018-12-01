@@ -13,8 +13,6 @@ chrome.history.search({
     'text': "/.*(github.com).+(issues/issues/).+/",
     maxResults: 1000
 }, function (historyItems) {
-    console.log(historyItems)
-    console.log("historyItems.length" + historyItems.length)
     for (var i = 0; i < historyItems.length; i++) {
         store.dispatch(addHistory(historyItems[i].title, historyItems[i].url))
     }
