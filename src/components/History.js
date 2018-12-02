@@ -9,7 +9,9 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const History = ({ text, url }) => {
     return (
-        <ListItem>
+        <ListItem button onClick={() => {
+            window.open(url)
+        }}>
             <ListItemText primary={text} />
             <ListItemSecondaryAction>
                 <CopyToClipboard onCopy={() => { }} text={url}>
