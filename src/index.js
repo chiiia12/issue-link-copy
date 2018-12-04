@@ -13,10 +13,14 @@ chrome.history.search({
     'text': "/.*(github.com).+(issues/issues/).+/",
     maxResults: 1000
 }, function (historyItems) {
+    historyItems.filter(onlyUnique);
     for (var i = 0; i < historyItems.length; i++) {
         store.dispatch(addHistory(historyItems[i].title, historyItems[i].url))
     }
 })
+function onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
+}
 
 render(
     <Provider store={store}>
