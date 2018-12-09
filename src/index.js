@@ -11,8 +11,9 @@ import { addHistory } from './actions';
 let store = createStore(historys)
 chrome.history.search({
     'text': "/.*(github.com).+(issues/issues/).+/",
-    maxResults: 1000
+    maxResults: 100
 }, function (historyItems) {
+    console.log(historyItems.length)
     historyItems.filter(onlyUnique);
     for (var i = 0; i < historyItems.length; i++) {
         store.dispatch(addHistory(historyItems[i].title, historyItems[i].url))

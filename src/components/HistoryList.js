@@ -5,7 +5,8 @@ import List from '@material-ui/core/List';
 import { Divider } from '@material-ui/core';
 
 const HistoryList = ({ historys }) => {
-    if (historys.size === 0) {
+    console.log(historys)
+    if (historys.length=== 0) {
         return (
             <p>There are no issues that you saw recently.</p>
         )
