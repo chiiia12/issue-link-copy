@@ -4,12 +4,17 @@ import History from './History'
 import List from '@material-ui/core/List';
 import { Divider } from '@material-ui/core';
 
+const styles = {
+    emptyMessage: {
+        margin: 16,
+    },
+}
+
 const HistoryList = ({ historys }) => {
     console.log(historys)
     if (historys.length === 0) {
         return (
-            // TODO add margin
-            <p>There are no issues that you saw recently.</p>
+            <p style={styles.emptyMessage}>There are no issues that you saw recently.</p>
         )
     } else {
         return (
