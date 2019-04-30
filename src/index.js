@@ -13,14 +13,19 @@ chrome.history.search({
     'text': "/.*(github.com).+(issues/issues/).+/",
     maxResults: 100
 }, function (historyItems) {
-    console.log(historyItems.length)
-    historyItems.filter(onlyUnique);
-    for (var i = 0; i < historyItems.length; i++) {
-        store.dispatch(addHistory(historyItems[i].title, historyItems[i].url))
+    	const result = historyItems.filter(onlyUnique).filter(onlyIssue);
+	console.log("result")
+	console.log(result)
+	for (var i = 0; i < result.length; i++) {
+        store.dispatch(addHistory(result[i].title, result[i].url))
     }
 })
 function onlyUnique(value, index, self) {
     return self.indexOf(value) === index;
+}
+
+function onlyIssue(value,index,self){
+    return !value.url.endsWith('issues')
 }
 
 render(
